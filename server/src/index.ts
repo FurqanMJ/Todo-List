@@ -12,7 +12,11 @@ const pool = new Pool({
   ssl: { rejectUnauthorized: false } // only for Render
 });
 
-app.use(cors());
+
+app.use(cors({
+  origin: 'https://todo-list-frontend-n2ya.onrender.com',
+  credentials: true
+}));
 app.use(express.json());
 
 /**
