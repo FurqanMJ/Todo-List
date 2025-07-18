@@ -13,7 +13,7 @@ interface Todo {
 }
 
 const App: React.FC = () => {
-  const API_BASE = 'http://localhost:5000';
+  const API_BASE = 'https://todo-list-backend-gcyv.onrender.com';
 
   const [todos, setTodos] = useState<Todo[]>([]);
   const [title, setTitle] = useState('');
