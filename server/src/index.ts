@@ -26,7 +26,9 @@ const pool = new Pool({
 // app.use(cors());
 
 app.use(cors({
-  origin: 'https://todo-list-frontend-n2ya.onrender.com',
+  origin: [
+  'http://localhost:3000',
+  'https://todo-list-frontend-n2ya.onrender.com'],
   credentials: true
 }));
 
