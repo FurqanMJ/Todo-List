@@ -13,12 +13,29 @@ const pool = new Pool({
   
 });
 
+// const pool = new Pool({
+//   user: process.env.DB_USER,
+//   host: process.env.DB_HOST,
+//   database: process.env.DB_NAME,
+//   password: process.env.DB_PASSWORD,
+//   port: Number(process.env.DB_PORT),
+//   ssl: { rejectUnauthorized: false } // required for Render Postgres
+// });
+
+
+// app.use(cors());
 
 app.use(cors({
   origin: 'https://todo-list-frontend-n2ya.onrender.com',
   credentials: true
 }));
+
 app.use(express.json());
+
+// 🔥 1. Add this anywhere before app.listen()
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
 
 /**
  * GET /todos
